@@ -3,10 +3,9 @@
     <li>
       <h1>{{product.name}}</h1>
       <p>{{product.price}}</p>
-      <button type="button" name="substract" (click)="substract(product.id)"> - </button>
+      <button type="button" name="substract" (click)="math(product.id,'-')"> - </button>
       <span id="{{product.id}}_quantity" >0</span>
-      <button type="button" name="add" (click)="add(product.id)"> + </button>
-
+      <button type="button" name="add" (click)="math(product.id,'+')"> + </button>
     </li>
   </ul>
 </div>

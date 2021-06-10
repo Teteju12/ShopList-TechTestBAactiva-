@@ -23,22 +23,17 @@ export class ListComponent implements OnInit {
 
   }
 
-  add(_id: string){
+  math(_id:string, signType: string){
     let product = this.quantityProducts.find(p_index => p_index.id == _id);
-    product.quantity++;
+
+    if(signType === '-'){
+      product.quantity--;
+      if(product.quantity < 0) product.quantity = 0;
+    }else if(signType === '+'){
+      product.quantity++;
+    }
 
     let htmlSpanElement = document.getElementById(product.id + "_quantity");
     htmlSpanElement.innerHTML = product.quantity;
-  }
-
-  substract(_id: string){
-    let product = this.quantityProducts.find(p_index => p_index.id == _id);
-    product.quantity--;
-
-    if(product.quantity < 0) product.quantity = 0;
-
-    let htmlSpanElement = document.getElementById(product.id + "_quantity");
-    htmlSpanElement.innerHTML = product.quantity;
-
   }
 }
