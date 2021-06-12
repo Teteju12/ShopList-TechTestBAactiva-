@@ -1,1 +1,8 @@
-<p>shopcart works!</p>
+<div id="shoplist">
+  <ul *ngFor="let product of quantityProducts">
+    <li>
+      {{product.quantity}}
+    </li>
+  </ul>
+  <span id="total">{{total}}</span>
+</div>

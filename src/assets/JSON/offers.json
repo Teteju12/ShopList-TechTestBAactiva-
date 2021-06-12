@@ -1,0 +1,23 @@
+[
+  {
+    "offerID": 0,
+    "offerType": "fixed",
+    "Ammount": 4.50,
+    "numProductsToStartOffer": 3,
+    "products": "SR2"
+  },
+  {
+    "offerID": 1,
+    "offerType": "discount",
+    "Ammount": 0.66,
+    "numProductsToStartOffer": 3,
+    "products": "CF1"
+  },
+  {
+    "offerID": 1,
+    "offerType": "free",
+    "Ammount": 0,
+    "numProductsToStartOffer": 2,
+    "products": "GR1"
+  }
+]

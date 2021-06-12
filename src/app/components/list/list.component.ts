@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { JsonDBService } from 'src/app/service/json-db.service';
+import { JsonDBService } from 'src/app/services/json-db.service';
+import { DataTransferService } from 'src/app/services/data-transfer.service';
 
 @Component({
   selector: 'app-list',
@@ -11,7 +12,8 @@ export class ListComponent implements OnInit {
   productList: any[];
   quantityProducts: any[] = [];
 
-  constructor(private jsonDB: JsonDBService) {
+  constructor(private jsonDB: JsonDBService, private dataTransfer: DataTransferService) {
+    this.dataTransfer.insertData("quantityProducts", this.quantityProducts);
   }
 
   async ngOnInit(){
@@ -35,5 +37,6 @@ export class ListComponent implements OnInit {
 
     let htmlSpanElement = document.getElementById(product.id + "_quantity");
     htmlSpanElement.innerHTML = product.quantity;
+    this.dataTransfer.insertData("quantityProducts", this.quantityProducts);
   }
 }
