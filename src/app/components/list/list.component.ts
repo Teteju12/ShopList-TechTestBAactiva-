@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonDBService } from 'src/app/services/json-db.service';
-import { DataTransferService } from 'src/app/services/data-transfer.service';
+import { ShopCartService } from 'src/app/services/shop-cart.service';
 
 @Component({
   selector: 'app-list',
@@ -12,8 +12,8 @@ export class ListComponent implements OnInit {
   productList: any[];
   quantityProducts: any[] = [];
 
-  constructor(private jsonDB: JsonDBService, private dataTransfer: DataTransferService) {
-    this.dataTransfer.insertData("quantityProducts", this.quantityProducts);
+  constructor(private jsonDB: JsonDBService, private shopcart: ShopCartService) {
+
   }
 
   async ngOnInit(){
@@ -26,17 +26,9 @@ export class ListComponent implements OnInit {
   }
 
   math(_id:string, signType: string){
-    let product = this.quantityProducts.find(p_index => p_index.id == _id);
-
-    if(signType === '-'){
-      product.quantity--;
-      if(product.quantity < 0) product.quantity = 0;
-    }else if(signType === '+'){
-      product.quantity++;
-    }
-
+    let product = this.shopcart.addOrSubstractToCart(_id, signType);
     let htmlSpanElement = document.getElementById(product.id + "_quantity");
     htmlSpanElement.innerHTML = product.quantity;
-    this.dataTransfer.insertData("quantityProducts", this.quantityProducts);
+    this.shopcart.updatePrizes();
   }
 }

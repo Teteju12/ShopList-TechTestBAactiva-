@@ -1,8 +1,11 @@
 <div id="shoplist">
   <ul *ngFor="let product of quantityProducts">
-    <li>
-      {{product.quantity}}
+    <li>{{product.name}} - {{product.quantity}}: {{(product.price*product.quantity).toFixed(2)}} £
     </li>
   </ul>
-  <span id="total">{{total}}</span>
+  <hr>
+  Total  <span id="total" >{{total}} £</span> <br>
+  Offers <span id="discount" >-{{totalDiscount}} £</span>
+  <hr>
+  Checkout <span id="totalWithOffers" >{{totalWithOffers}} £</span>
 </div>
