@@ -1,10 +1,10 @@
 <div id="AvailableProducts">
-  <ul *ngFor="let product of productList">
+  <ul *ngFor="let product of quantityProducts">
     <li>
       <h1>{{product.name}}</h1>
       <p>{{product.price}} £</p>
       <button type="button" name="substract" (click)="math(product.id,'-')"> - </button>
-      <span id="{{product.id}}_quantity" >0</span>
+      <span id="{{product.id}}_quantity" >{{product.quantity}}</span>
       <button type="button" name="add" (click)="math(product.id,'+')"> + </button>
     </li>
   </ul>

@@ -3,30 +3,24 @@ import { JsonDBService } from 'src/app/services/json-db.service';
 import { ShopCartService } from 'src/app/services/shop-cart.service';
 
 @Component({
-  selector: 'app-shopcart',
-  templateUrl: './shopcart.component.html',
-  styleUrls: ['./shopcart.component.css']
+  selector: 'app-dropdown-shopcart',
+  templateUrl: './dropdown-shopcart.component.html',
+  styleUrls: ['./dropdown-shopcart.component.css']
 })
-export class ShopcartComponent implements OnInit {
+export class DropdownShopcartComponent implements OnInit {
 
   quantityProducts: any[] = [];
-  total: number;
   totalWithOffers: number;
-  totalDiscount: number;
+  length: number;
 
   constructor(private jsonDB: JsonDBService, private shopcart: ShopCartService) {
-    this.total = 0;
     this.totalWithOffers = 0;
-    this.totalDiscount = 0;
-
+    this.length = 0;
 
   }
 
 
   ngOnInit(): void {
-    setInterval(() => {
-      this.updatePrices();
-    }, 100);
     this.shopcart.getObservableShopcart().subscribe(
       val => {
         this.quantityProducts = val;
@@ -38,10 +32,8 @@ export class ShopcartComponent implements OnInit {
   }
 
   updatePrices(): void{
-    this.total = this.shopcart.getTotalPrice();
     this.totalWithOffers = this.shopcart.getTotalPriceWithOffers();
-    this.totalDiscount = this.shopcart.getTotalDiscount();
+    this.length = this.shopcart.getShopcartLength();
   }
-
 
 }

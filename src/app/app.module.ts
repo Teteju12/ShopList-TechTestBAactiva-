@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ShopcartComponent } from './components/shopcart/shopcart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { DropdownShopcartComponent } from './components/dropdown-shopcart/dropdown-shopcart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     HomeComponent,
-    ShopcartComponent
+    ShopcartComponent,
+    CheckoutComponent,
+    DropdownShopcartComponent
   ],
   imports: [
     BrowserModule,

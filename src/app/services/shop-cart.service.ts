@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { JsonDBService } from './json-db.service';
 
@@ -15,6 +16,7 @@ export class ShopCartService {
   shopcartObserver: any;
   total: number;
   totalWithOffers: number;
+  totalObservable: Observable<number>;
 
   constructor(private db: JsonDBService) {
     this.productList = db.getProductList();
@@ -23,6 +25,7 @@ export class ShopCartService {
     this.shopcartObserver = of(this.finalShopCartArray);
     this.total = 0;
     this.totalWithOffers = 0;
+    this.totalObservable = of(this.totalWithOffers);
 
   }
 
@@ -164,5 +167,13 @@ export class ShopCartService {
 
   getTotalDiscount(){
     return parseFloat((this.total - this.totalWithOffers).toFixed(2));
+  }
+
+  getObservableTotal(){
+    return this.totalObservable;
+  }
+
+  getShopcartLength(){
+    return this.finalShopCartArray.length;
   }
 }

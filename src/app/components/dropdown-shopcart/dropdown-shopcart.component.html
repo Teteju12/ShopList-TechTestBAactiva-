@@ -1,0 +1,11 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuBtn" data-bs-toggle="dropdown" aria-expanded="false" (click)="updatePrices()">
+    [carrito]
+  </button>
+  <ul *ngFor="let product of quantityProducts" lass="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+      <li>{{product.name}} - {{product.quantity}} : {{(product.price*product.quantity).toFixed(2)}} £
+      </li>
+  </ul>
+  <h4>Nº Total de productos: {{length}}</h4>
+  <h3>Precio total: {{totalWithOffers}} £</h3>
+</div>
