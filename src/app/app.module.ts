@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ShopcartComponent } from './components/shopcart/shopcart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { DropdownShopcartComponent } from './components/dropdown-shopcart/dropdown-shopcart.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DropdownShopcartComponent } from './components/dropdown-shopcart/dropdo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

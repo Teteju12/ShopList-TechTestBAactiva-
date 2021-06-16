@@ -1,0 +1,44 @@
+
+
+ul{
+  display: inline-flex;
+  padding: 20px;
+  align-items: center;
+  flex-flow: row;
+}
+
+.card-img-top{
+  width: 100%;
+  height: 200px;
+}
+
+.quantityContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background: rgb(0,91,110);
+  background: radial-gradient(circle, rgba(0,91,110,1) 5%, rgba(9,97,121,1) 54%, rgba(0,32,36,1) 100%);
+  border-radius: 17px
+}
+.quantityContainer button{
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 2px 4px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.quantityContainer hover{
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 2px 4px;
+  cursor: pointer;
+  border-radius: 10px;
+}

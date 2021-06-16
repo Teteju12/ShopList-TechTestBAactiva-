@@ -22,7 +22,7 @@ export class ListComponent implements OnInit {
     this.productList = this.jsonDB.getProductList();
     this.productList.forEach(
       product =>{
-      this.quantityProducts.push({"id": product.id, "quantity": 0, "name": product.name, "price": product.price});
+      this.quantityProducts.push({"id": product.id, "quantity": 0, "name": product.name, "price": product.price, "img": product.img});
       }
     );
 

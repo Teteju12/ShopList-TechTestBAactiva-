@@ -1,6 +1,15 @@
+<body>
+  <header>
 
-<header>
-  <app-dropdown-shopcart></app-dropdown-shopcart>
-  <button type="button" name="button" (click)="navigate()"> Acceder a Compra</button>
-</header>
-<app-list></app-list>
+    <div class="overlay">
+      <h1 class="title">TU COMPRA A CASA!</h1>
+      <ul>
+        <li><app-dropdown-shopcart></app-dropdown-shopcart></li>
+        <li><button type="button" name="button" (click)="navigate()"> Acceder a Compra</button></li>
+      </ul>
+
+    </div>
+
+  </header>
+  <app-list></app-list>
+</body>

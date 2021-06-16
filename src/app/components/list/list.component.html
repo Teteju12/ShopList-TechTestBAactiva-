@@ -1,11 +1,16 @@
 <div id="AvailableProducts">
   <ul *ngFor="let product of quantityProducts">
-    <li>
-      <h1>{{product.name}}</h1>
-      <p>{{product.price}} £</p>
-      <button type="button" name="substract" (click)="math(product.id,'-')"> - </button>
-      <span id="{{product.id}}_quantity" >{{product.quantity}}</span>
-      <button type="button" name="add" (click)="math(product.id,'+')"> + </button>
+    <li class="card" style="width: 18rem;">
+       <img src="{{product.img}}" class="card-img-top" alt="{{product.img}}">
+       <div class="card-body">
+        <h1 class="card-title">{{product.name}}</h1>
+        <p class="card-subtitle mb-2 text-muted">{{product.price}} £</p>
+        <div class="quantityContainer">
+          <button type="button" name="substract" (click)="math(product.id,'-')"> - </button>
+          <span id="{{product.id}}_quantity" >{{product.quantity}}</span>
+          <button type="button" name="add" (click)="math(product.id,'+')"> + </button>
+        </div>
+      </div>
     </li>
   </ul>
 </div>

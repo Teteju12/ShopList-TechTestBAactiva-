@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonDBService } from 'src/app/services/json-db.service';
 import { ShopCartService } from 'src/app/services/shop-cart.service';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-dropdown-shopcart',
@@ -12,6 +13,7 @@ export class DropdownShopcartComponent implements OnInit {
   quantityProducts: any[] = [];
   totalWithOffers: number;
   length: number;
+  faShoppingCart = faCartPlus;
 
   constructor(private jsonDB: JsonDBService, private shopcart: ShopCartService) {
     this.totalWithOffers = 0;
